@@ -37,16 +37,20 @@ body{
 
 #botões{
     display: flex;
-    flex-flow: wrap column;
+    flex-flow: wrap row;
 }
 
 .nums{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
     height: 70px;
     width: 60px;
+    font: normal 1.5em Arial, sans-serif;
     border: 1px solid black;
     background-color: rgba(110, 106, 172, 0.959);
+}
+
+.nums:hover{
+    background-color: rgba(110, 106, 172, 0.452);
 }
