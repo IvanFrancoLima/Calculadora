@@ -1,4 +1,6 @@
+//Variáveis Globais
 let vet = []
+let operação = 'nada'
 let exibir = window.document.querySelector('#números')
 
 //Números da cálculadora
@@ -56,5 +58,24 @@ function numero0(){
 //Operações
 
 function soma(){
-    
+     operação = 'soma'
+}
+
+function limpar(){
+    exibir.innerHTML = ''
+    vet = []
+}
+
+// // // // // // // // //
+
+//Exibir resultados
+
+function result(){
+    if(operação == 'soma'){
+        let resultado = vet[0] + vet[1]
+        vet = []
+        vet.push(resultado)
+
+        exibir.innerHTML=`${resultado}`
+    }
 }
