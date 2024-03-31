@@ -1,5 +1,6 @@
 //Variáveis Globais
 let vet = []
+let backup = []
 let operação = 'nada'
 let exibir = window.document.querySelector('#números')
 
@@ -10,6 +11,7 @@ function numero1(){
     }
 
     exibir.innerHTML+= 1
+    backup.push(exibir.innerHTML)
 }
 
 function numero2(){
@@ -18,6 +20,7 @@ function numero2(){
     }
 
     exibir.innerHTML+= 2
+    backup.push(exibir.innerHTML)
 }
 
 function numero3(){
@@ -26,6 +29,7 @@ function numero3(){
     }
 
     exibir.innerHTML+= 3
+    backup.push(exibir.innerHTML)
 }
 
 function numero4(){
@@ -34,6 +38,7 @@ function numero4(){
     }
 
     exibir.innerHTML+= 4
+    backup.push(exibir.innerHTML)
 }
 
 function numero5(){
@@ -42,6 +47,7 @@ function numero5(){
     }
 
     exibir.innerHTML+= 5
+    backup.push(exibir.innerHTML)
 }
 
 function numero6(){
@@ -50,6 +56,7 @@ function numero6(){
     }
 
     exibir.innerHTML+= 6
+    backup.push(exibir.innerHTML)
 }
 
 function numero7(){
@@ -58,6 +65,7 @@ function numero7(){
     }
 
     exibir.innerHTML+= 7
+    backup.push(exibir.innerHTML)
 }
 
 function numero8(){
@@ -66,6 +74,7 @@ function numero8(){
     }
 
     exibir.innerHTML+= 8
+    backup.push(exibir.innerHTML)
 }
 
 function numero9(){
@@ -74,6 +83,7 @@ function numero9(){
     }
 
     exibir.innerHTML+= 9
+    backup.push(exibir.innerHTML)
 }
 
 function numero0(){
@@ -82,6 +92,7 @@ function numero0(){
     }
 
     exibir.innerHTML+= 0
+    backup.push(exibir.innerHTML)
 }
 // // // // // // // // //
 
@@ -91,11 +102,34 @@ function soma(){
     operação = 'soma' //Tipo de operação
     vet[0] = Number(exibir.innerHTML)
     exibir.innerHTML=`${vet[0]}`
+    backup = []
 }
+
+// // // // // // // // //
+
+function subtração(){
+    operação = 'subtração' //Tipo de operação
+    vet[0] = Number(exibir.innerHTML)
+    exibir.innerHTML=`${vet[0]}`
+    backup = []
+}
+
+// // // // // // // // //
 
 function limpar(){
     exibir.innerHTML = ''
     vet = []
+    backup = []
+}
+
+// // // // // // // // //
+
+function apagar(){
+    backup.pop(); // Remove o último intem inserido no vetor
+    exibir.innerHTML = ''
+    for(let cont = 0; cont < backup.length; cont++){
+        exibir.innerHTML += backup[cont].toString() 
+    }
 }
 
 // // // // // // // // //
@@ -103,12 +137,23 @@ function limpar(){
 //Exibir resultados
 
 function result(){
-    if(operação == 'soma'){ 
+    if(operação == 'soma'){
+
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] + vet[1]
         vet = []
         
         vet.push(resultado)
         exibir.innerHTML=`${resultado}`
+
+    }else if(operação == 'subtração'){
+
+        vet[1] = Number(exibir.innerHTML)
+        let resultado = vet[0] - vet[1]
+        vet = []
+
+        vet.push(resultado)
+        exibir.innerHTML = resultado
+        
     }
 }
