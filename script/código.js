@@ -5,60 +5,92 @@ let exibir = window.document.querySelector('#números')
 
 //Números da cálculadora
 function numero1(){
-    exibir.innerHTML='1'
-    vet.push(1)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 1
 }
 
 function numero2(){
-    exibir.innerHTML='2'
-    vet.push(2)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 2
 }
 
 function numero3(){
-    exibir.innerHTML='3'
-    vet.push(3)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 3
 }
 
 function numero4(){
-    exibir.innerHTML='4'
-    vet.push(4)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 4
 }
 
 function numero5(){
-    exibir.innerHTML='5'
-    vet.push(5)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 5
 }
 
 function numero6(){
-    exibir.innerHTML='6'
-    vet.push(6)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 6
 }
 
 function numero7(){
-    exibir.innerHTML='7'
-    vet.push(7)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 7
 }
 
 function numero8(){
-    exibir.innerHTML='8'
-    vet.push(8)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 8
 }
 
 function numero9(){
-    exibir.innerHTML='9'
-    vet.push(9)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 9
 }
 
 function numero0(){
-    exibir.innerHTML='0'
-    vet.push(0)
+    if(exibir.innerHTML==vet[0]){
+        exibir.innerHTML = ''
+    }
+
+    exibir.innerHTML+= 0
 }
 // // // // // // // // //
 
 //Operações
 
 function soma(){
-     operação = 'soma'
+    operação = 'soma' //Tipo de operação
+    vet[0] = Number(exibir.innerHTML)
+    exibir.innerHTML=`${vet[0]}`
 }
 
 function limpar(){
@@ -71,11 +103,12 @@ function limpar(){
 //Exibir resultados
 
 function result(){
-    if(operação == 'soma'){
+    if(operação == 'soma'){ 
+        vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] + vet[1]
         vet = []
+        
         vet.push(resultado)
-
         exibir.innerHTML=`${resultado}`
     }
 }
