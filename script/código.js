@@ -8,6 +8,7 @@ let exibir = window.document.querySelector('#números')
 function numero1(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 1
@@ -17,6 +18,7 @@ function numero1(){
 function numero2(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 2
@@ -26,6 +28,7 @@ function numero2(){
 function numero3(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 3
@@ -35,6 +38,7 @@ function numero3(){
 function numero4(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 4
@@ -44,6 +48,7 @@ function numero4(){
 function numero5(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 5
@@ -53,6 +58,7 @@ function numero5(){
 function numero6(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 6
@@ -62,6 +68,7 @@ function numero6(){
 function numero7(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 7
@@ -71,6 +78,7 @@ function numero7(){
 function numero8(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 8
@@ -80,6 +88,7 @@ function numero8(){
 function numero9(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 9
@@ -89,6 +98,7 @@ function numero9(){
 function numero0(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
+        backup = []
     }
 
     exibir.innerHTML+= 0
