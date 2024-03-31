@@ -116,6 +116,24 @@ function subtração(){
 
 // // // // // // // // //
 
+function divisão(){
+    operação = 'divisão' //Tipo de operação
+    vet[0] = Number(exibir.innerHTML)
+    exibir.innerHTML=`${vet[0]}`
+    backup = []
+}
+
+// // // // // // // // //
+
+function multiplicação(){
+    operação = 'multiplicação' //Tipo de operação
+    vet[0] = Number(exibir.innerHTML)
+    exibir.innerHTML=`${vet[0]}`
+    backup = []
+}
+
+// // // // // // // // //
+
 function limpar(){
     exibir.innerHTML = ''
     vet = []
@@ -154,6 +172,24 @@ function result(){
 
         vet.push(resultado)
         exibir.innerHTML = resultado
-        
+
+    }else if(operação == 'divisão'){
+
+        vet[1] = Number(exibir.innerHTML)
+        let resultado = vet[0] / vet[1]
+        vet[0]
+
+        vet.push(resultado)
+        exibir.innerHTML = `${resultado}`
+
+    }else if(operação == 'multiplicação'){
+
+        vet[1] = Number(exibir.innerHTML)
+        let resultado = vet[0] * vet[1]
+        vet[0]
+
+        vet.push(resultado)
+        exibir.innerHTML = `${resultado}`
+
     }
 }

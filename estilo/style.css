@@ -12,11 +12,11 @@ body{
     align-items: center;
     height: 100vh;
     width: 100vw;
+    background-image: linear-gradient(to bottom,#f8b82d,#FFFFFF);
 }
 
 #calculadora{
-    width: 300px;
-    height: 400px;
+    width: 270px;
     border-radius: 5px;
     background-color: rgba(128, 128, 128, 0.719);
 }
@@ -26,8 +26,9 @@ body{
     align-items: center;
     justify-content: flex-end;
     padding: 0 10px;
-    height: 55px;
+    height: 60px;
     width: 100%;
+    border-radius: 5px 5px 0 0;
     background-color: rgba(255, 255, 255, 0.349);
 }
 
@@ -44,8 +45,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 69px;
-    width: 100px;
+    height: 55px;
+    width: 90px;
     font: normal 1.5em Arial, sans-serif;
     border-radius: 5px;
     border: 1px solid black;
@@ -53,5 +54,9 @@ body{
 }
 
 .nums:hover{
-    background-color: rgba(110, 106, 172, 0.452);
+    background-color: rgba(127, 176, 240, 0.452);
+}
+
+#igual{
+    width: 180px;
 }
