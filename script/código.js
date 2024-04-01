@@ -4,6 +4,8 @@ let backup = []
 let operação = 'nada'
 let exibir = window.document.querySelector('#números')
 let sombra = window.document.querySelector('#sombra')
+let quadrado = window.document.createElement('sup')
+
 
 //Números da cálculadora
 function numero1(){
@@ -15,7 +17,7 @@ function numero1(){
     exibir.innerHTML+= 1
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero2(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -25,7 +27,7 @@ function numero2(){
     exibir.innerHTML+= 2
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero3(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -35,7 +37,7 @@ function numero3(){
     exibir.innerHTML+= 3
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero4(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -45,7 +47,7 @@ function numero4(){
     exibir.innerHTML+= 4
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero5(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -55,7 +57,7 @@ function numero5(){
     exibir.innerHTML+= 5
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero6(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -65,7 +67,7 @@ function numero6(){
     exibir.innerHTML+= 6
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero7(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -75,7 +77,7 @@ function numero7(){
     exibir.innerHTML+= 7
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero8(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -85,7 +87,7 @@ function numero8(){
     exibir.innerHTML+= 8
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero9(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -95,7 +97,7 @@ function numero9(){
     exibir.innerHTML+= 9
     backup.push(exibir.innerHTML)
 }
-
+// // // // // // // // //
 function numero0(){
     if(exibir.innerHTML==vet[0]){
         exibir.innerHTML = ''
@@ -107,11 +109,21 @@ function numero0(){
 }
 // // // // // // // // //
 
+function vírgula(){
+    if(exibir.innerHTML == ''){
+        exibir.innerHTML= `0,`
+    }else{
+        exibir.innerHTML+= `,`
+    }
+}
+
+// // // // // // // // //
+
 //Operações
 
 function soma(){
     operação = 'soma' //Tipo de operação
-    vet[0] = Number(exibir.innerHTML)
+    vet[0] = Number(exibir.innerHTML.replace(',','.'))
     exibir.innerHTML=`${vet[0]}`
     backup = []
     sombra.innerHTML=`${vet[0]}+`
@@ -121,7 +133,7 @@ function soma(){
 
 function subtração(){
     operação = 'subtração' //Tipo de operação
-    vet[0] = Number(exibir.innerHTML)
+    vet[0] = Number(exibir.innerHTML.replace(',','.'))
     exibir.innerHTML=`${vet[0]}`
     backup = []
     sombra.innerHTML=`${vet[0]}-`
@@ -131,7 +143,7 @@ function subtração(){
 
 function divisão(){
     operação = 'divisão' //Tipo de operação
-    vet[0] = Number(exibir.innerHTML)
+    vet[0] = Number(exibir.innerHTML.replace(',','.'))
     exibir.innerHTML=`${vet[0]}`
     backup = []
     sombra.innerHTML=`${vet[0]}/`
@@ -141,13 +153,24 @@ function divisão(){
 
 function multiplicação(){
     operação = 'multiplicação' //Tipo de operação
-    vet[0] = Number(exibir.innerHTML)
+    vet[0] = Number(exibir.innerHTML.replace(',','.'))
     exibir.innerHTML=`${vet[0]}`
     backup = []
     sombra.innerHTML=`${vet[0]}*`
 }
 
 // // // // // // // // //
+
+function potência(){
+    operação = 'potência'
+    vet[0] = Number(exibir.innerHTML.replace(',','.'))
+    exibir.innerHTML=`${vet[0]}`
+    backup = []
+    sombra.innerHTML=`${vet[0]}`
+
+    sombra.appendChild(quadrado)
+    quadrado.innerHTML='X'
+}
 
 function limpar(){
     exibir.innerHTML = ''
@@ -159,8 +182,9 @@ function limpar(){
 // // // // // // // // //
 
 function apagar(){
-    backup.pop(); // Remove o último intem inserido no vetor
+    backup.pop(); // Remove o último item inserido no vetor
     exibir.innerHTML = ''
+    sombra.innerHTML = ''
     for(let cont = 0; cont < backup.length; cont++){
         exibir.innerHTML += backup[cont].toString() 
     }
@@ -173,41 +197,79 @@ function apagar(){
 function result(){
     if(operação == 'soma'){
 
-        vet[1] = Number(exibir.innerHTML)
+        //Vetor recebendo o segundo valor da operação
+        vet[1] = Number(exibir.innerHTML.replace(',','.'))
         let resultado = vet[0] + vet[1]
+
+        //Mensagem com o resultado da operação
         sombra.innerHTML=`${vet[0]}+${vet[1]}=`
-        vet = []
-        
+
+        //Preparando o vetor para mais operações
+        vet = []       
         vet.push(resultado)
         exibir.innerHTML=`${resultado}`
 
     }else if(operação == 'subtração'){
 
-        vet[1] = Number(exibir.innerHTML)
+        //Vetor recebendo o segundo valor da operação
+        vet[1] = Number(exibir.innerHTML.replace(',','.'))
         let resultado = vet[0] - vet[1]
-        sombra.innerHTML=`${vet[0]}-${vet[1]}=`
-        vet = []
 
+        //Mensagem com o resultado da operação
+        sombra.innerHTML=`${vet[0]}-${vet[1]}=`
+
+        //Preparando o vetor para mais operações
+        vet = []
         vet.push(resultado)
         exibir.innerHTML = resultado
 
     }else if(operação == 'divisão'){
 
-        vet[1] = Number(exibir.innerHTML)
+        //Vetor recebendo o segundo valor da operação
+        vet[1] = Number(exibir.innerHTML.replace(',','.'))
         let resultado = vet[0] / vet[1]
-        sombra.innerHTML=`${vet[0]}/${vet[1]}=`
-        vet = []
 
+        //Mensagem com o resultado da operação
+        sombra.innerHTML=`${vet[0]}/${vet[1]}=`
+
+        //Preparando o vetor para mais operações
+        vet = []
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
 
     }else if(operação == 'multiplicação'){
 
-        vet[1] = Number(exibir.innerHTML)
+        //Vetor recebendo o segundo valor da operação
+        vet[1] = Number(exibir.innerHTML.replace(',','.'))
         let resultado = vet[0] * vet[1]
-        sombra.innerHTML=`${vet[0]}*${vet[1]}=`
-        vet = []
 
+        //Mensagem com o resultado da operação
+        sombra.innerHTML=`${vet[0]}*${vet[1]}=`
+
+        //Preparando o vetor para mais operações
+        vet = []
+        vet.push(resultado)
+        exibir.innerHTML = `${resultado}`
+
+    }else if(operação == 'potência'){
+
+        //Vetor recebendo o segundo valor da operação
+        vet[1] = Number(exibir.innerHTML.replace(',','.'))
+        let resultado = vet[0]
+
+        //Cálculo da potência
+        for(let cont = 1;cont<vet[1];cont++){
+            resultado*= vet[0]
+        }
+        
+        //Mensagem acima do resultado
+        sombra.innerHTML=`${vet[0]}`
+        sombra.appendChild(quadrado)
+        quadrado.innerHTML=`${vet[1]}`
+
+
+        //Preparando o vetor para mais operações
+        vet = []
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
 
