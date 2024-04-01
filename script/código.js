@@ -3,6 +3,7 @@ let vet = []
 let backup = []
 let operação = 'nada'
 let exibir = window.document.querySelector('#números')
+let sombra = window.document.querySelector('#sombra')
 
 //Números da cálculadora
 function numero1(){
@@ -113,6 +114,7 @@ function soma(){
     vet[0] = Number(exibir.innerHTML)
     exibir.innerHTML=`${vet[0]}`
     backup = []
+    sombra.innerHTML=`${vet[0]}+`
 }
 
 // // // // // // // // //
@@ -122,6 +124,7 @@ function subtração(){
     vet[0] = Number(exibir.innerHTML)
     exibir.innerHTML=`${vet[0]}`
     backup = []
+    sombra.innerHTML=`${vet[0]}-`
 }
 
 // // // // // // // // //
@@ -131,6 +134,7 @@ function divisão(){
     vet[0] = Number(exibir.innerHTML)
     exibir.innerHTML=`${vet[0]}`
     backup = []
+    sombra.innerHTML=`${vet[0]}/`
 }
 
 // // // // // // // // //
@@ -140,6 +144,7 @@ function multiplicação(){
     vet[0] = Number(exibir.innerHTML)
     exibir.innerHTML=`${vet[0]}`
     backup = []
+    sombra.innerHTML=`${vet[0]}*`
 }
 
 // // // // // // // // //
@@ -148,6 +153,7 @@ function limpar(){
     exibir.innerHTML = ''
     vet = []
     backup = []
+    sombra.innerHTML=``
 }
 
 // // // // // // // // //
@@ -173,6 +179,7 @@ function result(){
         
         vet.push(resultado)
         exibir.innerHTML=`${resultado}`
+        sombra.innerHTML=`${vet[0]}+`
 
     }else if(operação == 'subtração'){
 
@@ -182,24 +189,27 @@ function result(){
 
         vet.push(resultado)
         exibir.innerHTML = resultado
+        sombra.innerHTML=`${vet[0]}-`
 
     }else if(operação == 'divisão'){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] / vet[1]
-        vet[0]
+        vet = []
 
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
+        sombra.innerHTML=`${vet[0]}/`
 
     }else if(operação == 'multiplicação'){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] * vet[1]
-        vet[0]
+        vet = []
 
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
+        sombra.innerHTML=`${vet[0]}*`
 
     }
 }

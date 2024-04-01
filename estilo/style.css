@@ -31,6 +31,14 @@ body{
     background-color: #3F7C85;
 }
 
+#sombra{
+    font: normal bold 1em Arial, sans-serif;
+    color: rgb(48, 45, 45);
+    margin-top: 3px;
+    align-self: flex-start;
+    text-align: right;
+}
+
 #números{
     font: normal bold 1.5em Arial, sans-serif;
     color: white;
