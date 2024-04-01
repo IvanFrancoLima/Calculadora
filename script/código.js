@@ -175,41 +175,41 @@ function result(){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] + vet[1]
+        sombra.innerHTML=`${vet[0]}+${vet[1]}=`
         vet = []
         
         vet.push(resultado)
         exibir.innerHTML=`${resultado}`
-        sombra.innerHTML=`${vet[0]}+`
 
     }else if(operação == 'subtração'){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] - vet[1]
+        sombra.innerHTML=`${vet[0]}-${vet[1]}=`
         vet = []
 
         vet.push(resultado)
         exibir.innerHTML = resultado
-        sombra.innerHTML=`${vet[0]}-`
 
     }else if(operação == 'divisão'){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] / vet[1]
+        sombra.innerHTML=`${vet[0]}/${vet[1]}=`
         vet = []
 
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
-        sombra.innerHTML=`${vet[0]}/`
 
     }else if(operação == 'multiplicação'){
 
         vet[1] = Number(exibir.innerHTML)
         let resultado = vet[0] * vet[1]
+        sombra.innerHTML=`${vet[0]}*${vet[1]}=`
         vet = []
 
         vet.push(resultado)
         exibir.innerHTML = `${resultado}`
-        sombra.innerHTML=`${vet[0]}*`
 
     }
 }
