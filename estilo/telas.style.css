@@ -1,0 +1,14 @@
+@media screen and (max-width:355px) {
+    #calculadora{
+        width: 310px;
+    }
+
+    .nums{
+        height: 55px;
+        width: 103px;
+    }
+
+    #igual{
+        width: 320px;
+    }
+}
