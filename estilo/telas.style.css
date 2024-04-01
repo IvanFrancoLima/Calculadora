@@ -11,4 +11,21 @@
     #igual{
         width: 320px;
     }
+
+    .nums {
+        order: 1;
+    }
+    
+    #soma, #subtração, #divisão, #multiplicação{
+        order: 2;
+    }
+
+    #potência, #vírgula{
+        order: 3;
+    }
+    
+    #limpar, #apagar, #igual {
+        order: 4;
+    }
+
 }
